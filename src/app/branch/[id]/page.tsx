@@ -87,7 +87,7 @@ export default function BranchDetailPage() {
             </div>
           </div>
           <div className="flex items-center gap-6">
-            <button
+{/*             <button
               className={`px-6 py-2 bg-[#0062FF] text-white rounded-[8px] font-semibold ${
                 closed ? "opacity-50 !cursor-not-allowed" : ""
               }`}
@@ -95,7 +95,7 @@ export default function BranchDetailPage() {
               onClick={() => setShowCloseModal(true)}
             >
               Close for the Day
-            </button>
+            </button> */}
             <div className="flex items-center gap-2">
               <span className="text-sm text-[#222] font-semibold">
                 {disabled ? "Enable" : "Disable"} Branch
