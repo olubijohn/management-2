@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F1F1F1;
+  --foreground: #2E2E3A;
+  --blue: #0062FF;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-inter);
+  --color-blue: var(--blue);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+button {
+  cursor: pointer;
+}
