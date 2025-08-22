@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased overflow-x-hidden`}>
         <Header />
           <SideNavBar />
-          <main className="ml-[231px] p-5 pr-8">{children}</main>
+          <main className="ml-[231px] mt-14 p-5 pr-8">{children}</main>
       </body>
     </html>
   );

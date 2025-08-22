@@ -75,7 +75,7 @@ function SideNavBar() {
   };
 
   return (
-    <nav className="bg-white py-7 px-4 w-[231px] h-screen flex flex-col items-center justify-between fixed left-0 top-10 z-100">
+    <nav className="bg-white py-7 px-4 w-[231px] h-screen flex flex-col items-center justify-between fixed left-0 top-16 z-100">
       {" "}
       {/* Changed py-5 to py-7 to add more top padding */}
       <ul className="flex flex-col gap-1">
