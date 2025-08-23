@@ -78,7 +78,7 @@ function SideNavBar() {
     <nav className="bg-white py-7 px-4 w-[231px] h-screen flex flex-col items-center justify-between fixed left-0 top-14 z-100">
       {" "}
       {/* Changed py-5 to py-7 to add more top padding */}
-      <ul className="flex flex-col gap-1">
+      <ul className=" mt-3 flex flex-col gap-1">
         {navItems.map((item) => (
           <div key={item.name}>
             {item.subItems ? (
@@ -185,7 +185,7 @@ function SideNavBar() {
           </div>
         ))}
       </ul>
-      <ul className="flex flex-col gap-1 mb-48">
+      <ul className="flex flex-col gap-1 mb-25">
         <Link href="/logout">
           <li
             className={`w-full h-9 flex gap-1 items-center justify-center ${
