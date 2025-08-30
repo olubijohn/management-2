@@ -18,6 +18,7 @@ import {
   LogoutCurve,
   Setting2,
   UserTag,
+  Menu,
 } from "iconsax-reactjs";
 
 const navItems = [
