@@ -35,7 +35,7 @@ export function PaginatedTable<T extends object>({
     <>
     <div className="flex w-full">
       {/* Fixed first column */}
-      <div className={`bg-white rounded-bl-lg border-gray-200 ${shadow && "border-r shadow-[2px_0_24px_-2px_rgba(38,60,96,0.20)]"} z-10`}>
+      <div className={`bg-white rounded-bl-lg border-gray-200 ${shadow && "border-r shadow-[2px_0_24px_-2px_rgba(38,60,96,0.20)]"} z-10 flex-shrink-0`}>
         <table>
           <thead>
             <tr className="border-b border-dashed border-b-[#9A9AAF]">
@@ -58,8 +58,8 @@ export function PaginatedTable<T extends object>({
         </table>
       </div>
       {/* Scrollable rest of table */}
-      <div className="overflow-x-auto max-w-screen bg-white rounded-br-lg">
-        <table className="w-full text-xs text-left font-bold">
+      <div className="overflow-x-auto bg-white rounded-br-lg flex-1">
+        <table className="text-xs text-left font-bold w-full">
           <thead>
             <tr className="border-b border-dashed border-b-[#9A9AAF]">
               {restCols.map((col, idx) => (

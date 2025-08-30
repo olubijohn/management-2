@@ -46,7 +46,7 @@ export default function Page() {
   };
 
   return (
-    <main className="w-full lg:w-[1120px]">
+    <main className="w-full">
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
