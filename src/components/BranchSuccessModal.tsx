@@ -10,7 +10,7 @@ export default function BranchSuccessModal({
   onViewBranch: () => void;
 }) {
   return (
-    <Modal open={open} onClose={onClose} width="470px" height="333px">
+    <Modal open={open} onClose={onClose} width="w-full max-w-[470px]" height="h-auto max-h-[90vh] lg:h-[333px]">
       <div className="flex-1 flex flex-col items-center justify-center p-[32px] pb-0">
         <div className="border-dashed border-[2px] border-[#E5E7EB] rounded-[12px] w-full mb-8 p-6 flex flex-col items-center">
           <h2 className="text-lg font-bold text-[#222] mb-2 text-center">NEW BRANCH CREATED</h2>

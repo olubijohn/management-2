@@ -6,7 +6,7 @@ import { PaginatedTable } from "@/components/paginated-table";
 import { useState } from "react";
 import AddBranchFeature from "@/features/branch/AddBranch";
 import { useRouter } from "next/navigation";
-import type { Column } from "@/components/paginated-table"; // Import the type
+import type { Column } from "@/components/paginated-table";
 import { Add } from "iconsax-reactjs";
 
 export default function Home() {
@@ -60,11 +60,11 @@ export default function Home() {
           { label: "Api Key Manager", href: "/dashboard" },
         ]}
       />
-      <div className="px-4 flex items-center justify-between">
-        <h1 className="text-[40px] font-bold">Branch Manager</h1>
+      <div className="px-2 lg:px-4 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+        <h1 className="text-[28px] lg:text-[40px] font-bold">Branch Manager</h1>
         <button
           onClick={() => setModalOpen(true)}
-          className="flex items-center gap-[4px] mt-2 px-5 py-[9px] bg-transparent text-[#0062FF] rounded cursor-pointer font-semibold text-[11px] border border-[#0062FF] hover:shadow-[0_4px_35px_0_rgba(0,98,255,0.10)] hover:px-4 group"
+          className="flex items-center gap-[4px] px-4 lg:px-5 py-[9px] bg-transparent text-[#0062FF] rounded cursor-pointer font-semibold text-[11px] border border-[#0062FF] hover:shadow-[0_4px_35px_0_rgba(0,98,255,0.10)] hover:px-4 group w-full lg:w-auto justify-center"
         >
           <Add
             size="16"
@@ -75,17 +75,19 @@ export default function Home() {
         </button>
       </div>
       <div className="min-h-screen mt-5">
-        <div className="bg-[rgba(255,_255,_255,_0.70)] rounded-t-[10px] p-5">
+        <div className="bg-[rgba(255,_255,_255,_0.70)] rounded-t-[10px] p-3 lg:p-5">
           <h1 className="text-lg font-semibold mb-1">Branches</h1>
           <p className="text-sm text-gray-500 mb-4">
             View all branches that you have created
           </p>
         </div>
-        <PaginatedTable<BranchRow>
-          columns={columns}
-          data={branches}
-          rowsPerPage={10}
-        />
+        <div className="overflow-x-auto">
+          <PaginatedTable<BranchRow>
+            columns={columns}
+            data={branches}
+            rowsPerPage={10}
+          />
+        </div>
       </div>
       <AddBranchFeature open={modalOpen} onClose={() => setModalOpen(false)} />
     </main>

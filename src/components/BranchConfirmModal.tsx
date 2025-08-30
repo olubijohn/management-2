@@ -3,13 +3,13 @@ import Image from "next/image";
 
 export function CloseBranchModal({ open, onClose, onConfirm }: { open: boolean; onClose: () => void; onConfirm: () => void }) {
   return (
-    <Modal open={open} onClose={onClose} width="390px" height="347px">
+    <Modal open={open} onClose={onClose} width="w-full max-w-[390px]" height="h-auto max-h-[90vh] lg:h-[347px]">
       <div className="flex flex-col items-center justify-center pb-4">
         <div className="flex flex-col items-center justify-center px-5 pt-[30px]">
-          <Image src="/info.png" alt="info" width={64} height={64} className="mb-4" />
+          <Image src="/info.png" alt="info" width={64} height={64} className="mb-4 w-16 h-16 lg:w-16 lg:h-16" />
           <h2 className="text-xl font-bold text-[#222] mb-2 text-center">Close for the Day?</h2>
           <p className="text-sm text-[#222] text-center mb-2">
-            This action will stop new transactions until the next business day. Notify staff that the branch is closed. Maintain device connectivity but in “closed” status.
+            This action will stop new transactions until the next business day. Notify staff that the branch is closed. Maintain device connectivity but in "closed" status.
           </p>
           <p className="text-sm text-[#222] text-center mb-6">
             You can reopen the branch manually before the next day if needed.
@@ -39,10 +39,10 @@ export function CloseBranchModal({ open, onClose, onConfirm }: { open: boolean; 
 
 export function DeactivateBranchModal({ open, onClose, onConfirm }: { open: boolean; onClose: () => void; onConfirm: () => void }) {
   return (
-    <Modal open={open} onClose={onClose} width="390px" height="373px">
+    <Modal open={open} onClose={onClose} width="w-full max-w-[390px]" height="h-auto max-h-[90vh] lg:h-[373px]">
       <div className="flex flex-col items-center justify-center pb-4">
         <div className="flex flex-col items-center justify-center px-5 pt-[30px]">
-          <Image src="/info.png" alt="info" width={64} height={64} className="mb-4" />
+          <Image src="/info.png" alt="info" width={64} height={64} className="mb-4 w-16 h-16 lg:w-16 lg:h-16" />
           <h2 className="text-xl font-bold text-[#222] mb-2 text-center">Deactivate Branch?</h2>
           <p className="text-sm text-[#222] text-center mb-2">
             When you deactivate this branch, it will no longer process transactions. All connected devices will be disabled until reactivated. Managers and staff will lose access.

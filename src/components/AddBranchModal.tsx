@@ -52,8 +52,8 @@ export default function AddBranchModal({
   };
 
   return (
-    <div className="fixed inset-0 bg-[rgba(0,0,0,0.15)] flex items-center justify-center z-50">
-      <div className="bg-white rounded-[16px] shadow-lg w-[370px] h-[390px] relative flex flex-col overflow-hidden">
+    <div className="fixed inset-0 bg-[rgba(0,0,0,0.15)] flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-[16px] shadow-lg w-full max-w-[370px] h-auto max-h-[90vh] lg:h-[390px] relative flex flex-col overflow-hidden">
         {/* Header */}
         <div className="flex items-center mb-4 pt-[20px] px-[20px]">
           <Image
@@ -61,7 +61,7 @@ export default function AddBranchModal({
             alt="Code"
             width={32}
             height={32}
-            className="mr-4"
+            className="mr-4 w-8 h-8 lg:w-8 lg:h-8"
           />
           <div className="space-y-2">
             <h2 className="text-[15px] font-bold leading-tight">
@@ -79,12 +79,13 @@ export default function AddBranchModal({
             alt="Information"
             width={18}
             height={18}
+            className="w-4 h-4 lg:w-[18px] lg:h-[18px]"
           />
           <span className="text-xs">Basic Branch Information</span>
         </div>
         {/* Form Container */}
-        <div className=" relative flex-1 overflow-hidden">
-          <form className="  h-full overflow-y-auto pb-0 hide-scrollbar px-[22px]">
+        <div className="relative flex-1 overflow-hidden">
+          <form className="h-full overflow-y-auto pb-0 hide-scrollbar px-[22px]">
             {fields.map((field, index) => (
               <div
                 key={field.name}

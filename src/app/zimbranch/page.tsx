@@ -66,32 +66,32 @@ export default function BranchDetailPage() {
       {/* Alerts */}
       {disabled && <BranchDisabledAlert />}
       {closed && <BranchClosedAlert />}
-      <main className="bg-[rgba(255,_255,_255,_0.60)] rounded-[16px] p-5 min-h-[500px]">
+      <main className="bg-[rgba(255,_255,_255,_0.60)] rounded-[16px] p-3 lg:p-5 min-h-[500px]">
         {/* Header */}
-        <div className="flex items-center justify-between mb-5 p-5 rounded-[10px] bg-white">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-5 p-3 lg:p-5 rounded-[10px] bg-white gap-4">
           <div className="flex items-center gap-4">
             {/* Avatar */}
-            <div className="w-[56px] h-[56px] rounded-full bg-[#F5F7FA] flex items-center justify-center text-[28px] font-bold text-[#0062FF]">
+            <div className="w-[48px] h-[48px] lg:w-[56px] lg:h-[56px] rounded-full bg-[#F5F7FA] flex items-center justify-center text-[24px] lg:text-[28px] font-bold text-[#0062FF]">
               H
             </div>
             <div>
-              <h1 className="text-[20px] font-bold leading-tight">
+              <h1 className="text-[18px] lg:text-[20px] font-bold leading-tight">
                 {branch.name}
               </h1>
-              <div className="flex items-center gap-3 mt-1 text-xs text-black">
+              <div className="flex flex-col lg:flex-row lg:items-center gap-1 lg:gap-3 mt-1 text-xs text-black">
                 <span className="font-semibold">TIN</span> {branch.tpin}
-                <span className="text-[#9A9AAF]">•</span>
+                <span className="text-[#9A9AAF] hidden lg:inline">•</span>
                 <span className="font-semibold">Serial No.</span>{" "}
                 {branch.deviceSerial}
-                <span className="text-[#9A9AAF]">•</span>
+                <span className="text-[#9A9AAF] hidden lg:inline">•</span>
                 <span className="font-semibold">Device ID</span>{" "}
                 {branch.deviceId}
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-6">
             <button
-              className={`px-6 py-2 bg-[#0062FF] text-white rounded-[8px] font-semibold ${
+              className={`px-4 lg:px-6 py-2 bg-[#0062FF] text-white rounded-[8px] font-semibold text-sm lg:text-base ${
                 closed ? "opacity-50 !cursor-not-allowed" : ""
               }`}
               disabled={closed}
@@ -132,9 +132,9 @@ export default function BranchDetailPage() {
           </div>
         </div>
         {/* Info & Logs */}
-        <div className="flex gap-5">
+        <div className="flex flex-col lg:flex-row gap-5">
           {/* Branch Info */}
-          <div className="flex-1 p-5 rounded-[10px] bg-white">
+          <div className="flex-1 p-3 lg:p-5 rounded-[10px] bg-white">
             <h2 className="text-[15px] font-bold mb-4">Branch Information</h2>
             <div className="space-y-3 text-sm">
               <div className="text-xs">
@@ -162,32 +162,34 @@ export default function BranchDetailPage() {
             </div>
           </div>
           {/* Activity Logs */}
-          <div className="flex-1 p-5 rounded-[10px] bg-white">
+          <div className="flex-1 p-3 lg:p-5 rounded-[10px] bg-white">
             <h2 className="text-[16px] font-bold mb-4">Branch Activity Logs</h2>
-            <table className="w-full text-xs">
-              <thead>
-                <tr className="border-b border-dashed border-gray-200">
-                  <th className="py-2 text-left font-semibold text-xs text-gray-600">
-                    DATE & TIME
-                  </th>
-                  <th className="py-2 text-left font-semibold text-xs text-gray-600">
-                    ACTIVITY
-                  </th>
-                  <th className="py-2 text-left font-semibold text-xs text-gray-600">
-                    PERFORMED BY
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {activityLogs.map((log, idx) => (
-                  <tr key={idx}>
-                    <td className="py-2 w-[100px]">{log.dateTime}</td>
-                    <td className="py-2">{log.activity}</td>
-                    <td className="py-2">{log.performedBy}</td>
+            <div className="overflow-x-auto">
+              <table className="w-full text-xs min-w-[400px]">
+                <thead>
+                  <tr className="border-b border-dashed border-gray-200">
+                    <th className="py-2 text-left font-semibold text-xs text-gray-600">
+                      DATE & TIME
+                    </th>
+                    <th className="py-2 text-left font-semibold text-xs text-gray-600">
+                      ACTIVITY
+                    </th>
+                    <th className="py-2 text-left font-semibold text-xs text-gray-600">
+                      PERFORMED BY
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {activityLogs.map((log, idx) => (
+                    <tr key={idx}>
+                      <td className="py-2 w-[100px]">{log.dateTime}</td>
+                      <td className="py-2">{log.activity}</td>
+                      <td className="py-2">{log.performedBy}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </main>

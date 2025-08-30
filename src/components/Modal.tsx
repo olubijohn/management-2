@@ -12,16 +12,15 @@ export default function Modal({
   open,
   onClose,
   children,
-  width = "400px",
-  height = "auto",
+  width = "w-full max-w-[400px]",
+  height = "h-auto max-h-[90vh]",
 }: ModalProps) {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 bg-[rgba(0,0,0,0.5)] flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-[rgba(0,0,0,0.5)] flex items-center justify-center z-50 p-4">
       <div
-        className="bg-white rounded-[16px] shadow-lg relative flex flex-col"
-        style={{ width, height }}
+        className={`bg-white rounded-[16px] shadow-lg relative flex flex-col ${width} ${height}`}
       >
         {children}
       </div>

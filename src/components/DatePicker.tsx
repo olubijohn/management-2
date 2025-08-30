@@ -110,10 +110,10 @@ const DatePicker = ({ onDateSelect }: DatePickerProps) => {
       {showCalendar && (
         <div
           ref={calendarRef}
-          className="absolute top-full -left-56 mt-1 w-[335px] p-5 rounded-[10px] z-50"
+          className="absolute top-full left-0 lg:-left-56 mt-1 w-[335px] max-w-[90vw] p-3 lg:p-5 rounded-[10px] z-50"
           style={{ background: 'rgba(255, 255, 255, 0.30)', boxShadow: "0 4px 35px 0 rgba(0, 98, 255, 0.10)", backdropFilter: 'blur(2px)' }}
         >
-            <div className='head flex gap-5 items-center mb-5'>
+            <div className='head flex gap-3 lg:gap-5 items-center mb-5'>
                 <div className="icon bg-white p-2 rounded-[10px] shadow-[0_2px_10px_0_rgba(0,98,255,0.05)]">
                     <Calendar1 size="20" color="#0062FF" />
                 </div>
@@ -126,7 +126,7 @@ const DatePicker = ({ onDateSelect }: DatePickerProps) => {
             {/* Header */}
             <div className="flex justify-between items-center mb-4">
               <button
-                className="px-5 py-[9px] flex items-center gap-3 group"
+                className="px-3 lg:px-5 py-[9px] flex items-center gap-2 lg:gap-3 group"
                 onClick={() => {
                   setShowMonthDropdown(!showMonthDropdown);
                   setShowYearDropdown(false);
@@ -139,7 +139,7 @@ const DatePicker = ({ onDateSelect }: DatePickerProps) => {
         />
               </button>
               <button
-                className="px-5 py-[9px] flex items-center gap-3 group"
+                className="px-3 lg:px-5 py-[9px] flex items-center gap-2 lg:gap-3 group"
                 onClick={() => {
                   setShowYearDropdown(!showYearDropdown);
                   setShowMonthDropdown(false);
@@ -206,13 +206,13 @@ const DatePicker = ({ onDateSelect }: DatePickerProps) => {
           {/* Footer Buttons */}
             <div className="flex justify-between mt-5 pt-4 text-[11px]">
               <button
-                className="px-5 py-[9px] text-[#0062FF] bg-white rounded-[6px]"
+                className="px-3 lg:px-5 py-[9px] text-[#0062FF] bg-white rounded-[6px]"
                 onClick={() => setShowCalendar(false)}
               >
                 CANCEL
               </button>
               <button
-                className="px-5 py-[9px] bg-[#0062FF] text-white rounded-[6px]"
+                className="px-3 lg:px-5 py-[9px] bg-[#0062FF] text-white rounded-[6px]"
                 onClick={() => setShowCalendar(false)}
               >
                 CONTINUE

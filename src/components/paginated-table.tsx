@@ -39,7 +39,7 @@ export function PaginatedTable<T extends object>({
         <table>
           <thead>
             <tr className="border-b border-dashed border-b-[#9A9AAF]">
-              <th className="px-8 py-4 bg-white font-bold text-xs uppercase min-w-[120px] sticky left-0 z-10">
+              <th className="px-4 lg:px-8 py-4 bg-white font-bold text-xs uppercase min-w-[80px] lg:min-w-[120px] sticky left-0 z-10">
                 {firstCol.header}
               </th>
             </tr>
@@ -47,7 +47,7 @@ export function PaginatedTable<T extends object>({
           <tbody>
             {currentRows.map((row, rowIdx) => (
               <tr key={rowIdx}>
-                <td className="px-8 py-4 bg-white min-w-[120px] sticky left-0 z-10">
+                <td className="px-4 lg:px-8 py-4 bg-white min-w-[80px] lg:min-w-[120px] sticky left-0 z-10">
                   {firstCol.renderCell
                     ? firstCol.renderCell(row[firstCol.accessor], row)
                     : String(row[firstCol.accessor] ?? "")}
@@ -65,7 +65,7 @@ export function PaginatedTable<T extends object>({
               {restCols.map((col, idx) => (
                 <th
                   key={col.header}
-                  className={`px-8 py-4 bg-white font-bold text-xs uppercase min-w-[120px] ${col.className || ""}`}
+                  className={`px-4 lg:px-8 py-4 bg-white font-bold text-xs uppercase min-w-[80px] lg:min-w-[120px] ${col.className || ""}`}
                 >
                   {col.header}
                 </th>
@@ -78,7 +78,7 @@ export function PaginatedTable<T extends object>({
                 {restCols.map((col) => (
                   <td
                     key={col.header}
-                    className={`px-8 py-4 whitespace-normal min-w-[120px] ${col.className || ""}`}
+                    className={`px-4 lg:px-8 py-4 whitespace-normal min-w-[80px] lg:min-w-[120px] ${col.className || ""}`}
                   >
                     {col.renderCell
                       ? col.renderCell(row[col.accessor], row)
@@ -92,11 +92,11 @@ export function PaginatedTable<T extends object>({
       </div>
     </div>
     {/* Pagination Section */}
-      <div className="flex items-center justify-between mt-4">
-        <p className="text-sm text-gray-700">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-4 gap-4">
+        <p className="text-sm text-gray-700 text-center sm:text-left">
           Showing {currentRows.length} of {data.length} records
         </p>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center justify-center gap-2">
           <button
             onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
             disabled={currentPage === 1}

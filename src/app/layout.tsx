@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header";
-import SideNavBar from "@/components/sidenav";
+import ClientLayout from "@/components/ClientLayout";
 
 const inter = Inter({
   weight: ["400", "700"],
@@ -23,9 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased overflow-x-hidden`}>
-        <Header />
-          <SideNavBar />
-          <main className="ml-[231px] mt-14 p-5 pr-8">{children}</main>
+        <ClientLayout>
+          {children}
+        </ClientLayout>
       </body>
     </html>
   );

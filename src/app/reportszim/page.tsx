@@ -46,26 +46,26 @@ export default function Page() {
   };
 
   return (
-    <main className="w-[1120px]">
+    <main className="w-full lg:w-[1120px]">
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
           { label: "Reports", href: "/reports" },
         ]}
       />
-      <div className="px-4 flex items-center justify-between">
-        <h1 className="text-[40px] font-bold">Reports</h1>
+      <div className="px-2 lg:px-4 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+        <h1 className="text-[28px] lg:text-[40px] font-bold">Reports</h1>
         <DatePicker onDateSelect={handleDateSelect} />
       </div>
       <div className="mt-5 min-h-screen">
-        <div className="bg-[rgba(255,_255,_255,_0.70)] rounded-t-[10px] p-5 flex justify-between items-center">
+        <div className="bg-[rgba(255,_255,_255,_0.70)] rounded-t-[10px] p-3 lg:p-5 flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4">
           <div>
             <h1 className="text-lg font-semibold mb-1">Reports</h1>
             <p className="text-sm text-gray-500 mb-4">
               View all reports that you have created
             </p>
           </div>
-          <button className="mt-2 px-5 py-[9px] bg-blue text-[#F0F4F9] rounded text-xs cursor-pointer font-semibold flex items-center gap-2">
+          <button className="px-4 lg:px-5 py-[9px] bg-blue text-[#F0F4F9] rounded text-xs cursor-pointer font-semibold flex items-center gap-2 w-full lg:w-auto justify-center">
             <DocumentDownload size="18" color="white" />
             <span>DOWNLOAD</span>
           </button>
