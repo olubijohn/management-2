@@ -67,26 +67,26 @@ export default function BranchDetailPage() {
       <main className="bg-[rgba(255,_255,_255,_0.60)] rounded-[16px] p-3 lg:p-5 min-h-[500px]">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-5 p-3 lg:p-5 rounded-[10px] bg-white gap-4">
-          <div className="flex items-center gap-4">
+          <div className="lg:flex items-center gap-4">
             {/* Avatar */}
-            <div className="w-[48px] h-[48px] lg:w-[56px] lg:h-[56px] rounded-full bg-[#F5F7FA] flex items-center justify-center text-[24px] lg:text-[28px] font-bold text-[#0062FF]">
+            <div className="w-[48px] h-[48px] lg:w-[56px] lg:h-[56px] rounded-full bg-[#F5F7FA] flex items-center justify-center text-[24px] lg:text-[28px] font-bold text-[#0062FF] mb-2 lg:mb-0">
               H
             </div>
             <div>
               <h1 className="text-[18px] lg:text-[20px] font-bold leading-tight">
                 {branch.name}
               </h1>
-              <div className="flex flex-col lg:flex-row lg:items-center gap-1 lg:gap-3 mt-1 text-xs text-black">
+              <div className="flex flex-row flex-wrap lg:items-center gap-2 lg:gap-3 mt-1 text-xs text-black w-[200px] lg:w-auto">
                 <span className="font-semibold">TPIN</span> {branch.tpin}
-                <span className="text-[#9A9AAF] hidden lg:inline">•</span>
+                <span className="text-[#9A9AAF] lg:inline">•</span>
                 <span className="font-semibold">Branch ID</span>{" "}
                 {branch.branchId}
-                <span className="text-[#9A9AAF] hidden lg:inline">•</span>
+                <span className="text-[#9A9AAF] lg:inline">•</span>
                 <span className="font-semibold">SDCID</span> {branch.SDCID}
               </div>
             </div>
           </div>
-          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-6">
+          <div className="flex lg:flex-row flex-row-reverse items-center justify-start  gap-4 lg:gap-6">
             <button
               className={`px-4 lg:px-6 py-2 bg-[#0062FF] text-white rounded-[8px] font-semibold text-sm lg:text-base ${
                 closed ? "opacity-50 !cursor-not-allowed" : ""
@@ -134,31 +134,31 @@ export default function BranchDetailPage() {
           <div className="flex-1 p-3 lg:p-5 rounded-[10px] bg-white">
             <h2 className="text-[15px] font-bold mb-4">Branch Information</h2>
             <div className="space-y-3 text-sm">
-              <div className="text-xs">
+              <div className="text-xs space-x-10 lg:space-x-0">
                 <span className="">Branch Name</span>
                 <span className="font-semibold ml-2">{branch.name}</span>
               </div>
-              <div className="text-xs">
+              <div className="text-xs space-x-16 lg:space-x-0">
                 <span className="">Branch ID</span>
                 <span className="font-semibold ml-2">{branch.branchId}</span>
               </div>
               <div className="text-xs">
                 <span className="">Manager Name</span>
-                <span className=" font-semibold ml-2 font-bold">
+                <span className="font-semibold lg:ml-2 lg:font-bold block lg:inline mt-2">
                   {branch.managerName}
                 </span>
               </div>
               <div className="text-xs">
                 <span className="">Manager Email</span>
-                <span className="font-semibold ml-2">
+                <span className="font-semibold lg:ml-2 lg:font-bold block lg:inline mt-2">
                   {branch.managerEmail}
                 </span>
               </div>
-              <div className="text-xs">
+              <div className="text-xs space-x-[60px] lg:space-x-0">
                 <span className="">Device ID</span>
                 <span className=" font-semibold ml-2">{branch.deviceId}</span>
               </div>
-              <div className="text-xs">
+              <div className="text-xs space-x-10 lg:space-x-0">
                 <span className="">Date Created</span>
                 <span className=" font-semibold ml-2">
                   {branch.dateCreated}
